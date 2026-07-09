@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nelvax - Admin Access Gate</title>
+    <link rel="stylesheet" href="admin-login.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-header">
+            <h2>Nelvax <span>Admin</span></h2>
+            <p>Authorized Control Unit Only</p>
+        </div>
+
+        <form id="admin-login-form">
+            <div class="input-group">
+                <label for="admin-email">Admin Email</label>
+                <input type="email" id="admin-email" required placeholder="name@nelvax.com">
+            </div>
+
+            <div class="input-group">
+                <label for="admin-password">Password</label>
+                <input type="password" id="admin-password" required placeholder="••••••••">
+            </div>
+
+            <button type="submit" id="login-btn">Verify Identity</button>
+        </form>
+    </div>
+
+    <script src="admin-login.js"></script>
+</body>
+</html>
