@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nelvax Compressor</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+    <div class="theme-toggle-container">
+        <button class="theme-toggle-btn" onclick="toggleSystemTheme()" id="themeToggleBtn">
+            <span class="theme-icon">☀️</span> <span class="theme-text">Light Mode</span>
+        </button>
+    </div>
+
+    <header class="app-header">
+        <h1 class="glow-text">Nelvax Compressor</h1>
+        <p>Advanced multi-format text, pixel, and sound wave reduction node</p>
+    </header>
+
+    <main class="workspace-container single-layout">
+      <nav class="novabyte-nav-bar">
+            <a href="compressor.html" class="nav-link active">⚡ Compressor Engine</a>
+            <a href="reverse.html" class="nav-link">🧬 Reverser Matrix</a>
+        </nav>
+        <button id="logoutBtn" class="nav-logout-btn">Log Out</button>
+        
+        <section class="panel-card neon-glow-cyan">
+            <header class="panel-header">
+                <div class="header-indicator cyan-pulse"></div>
+                <h2>Original Input File</h2>
+            </header>
+            
+            <div class="file-upload-zone">
+                <label for="filePicker" class="upload-label" id="fileLabel">
+                    <span class="upload-icon">⚡</span> Choose a file (Text, Image, or Audio)
+                </label>
+                <input type="file" id="filePicker" accept="*/*">
+            </div>
+
+            <textarea id="inputText" placeholder="Paste your string content or load an engineering asset file above to initialize compression..."></textarea>
+            
+            <div class="metrics-bar">
+                <span class="metric-item">Detected File Type: <strong id="detectedMode" class="cyan-text">TEXT</strong></span>
+                <span class="metric-item">Original Weight: <strong id="inputSize">0</strong> bytes</span>
+            </div>
+            
+            <div class="action-row">
+                <button class="action-btn btn-cyan-glow" onclick="processCompressionLifecycle()">Compress Data Stream</button>
+            </div>
+        </section>
+
+        <section class="panel-card neon-glow-cyan">
+            <header class="panel-header">
+                <div class="header-indicator cyan-pulse"></div>
+                <h2>Generated Binary Package</h2>
+            </header>
+
+            <textarea id="outputText" readonly placeholder="Compressed payload structural data packages will appear here..."></textarea>
+            
+            <div class="metrics-bar">
+                <span class="metric-item">New Weight: <strong id="outputSize">0</strong> bytes</span>
+                <span class="metric-item">Space Saved: <strong id="reductionRate" class="cyan-text">0.0%</strong></span>
+            </div>
+            
+            <div class="action-row">
+                <button class="action-btn btn-download-glow" onclick="downloadPackage()">Save Nelvax Package (.nvb)</button>
+            </div>
+        </section>
+
+        <section class="panel-card full-width neon-glow-purple">
+            <header class="panel-header">
+                <div class="header-indicator purple-pulse"></div>
+                <h2>Nelvax Internal Patterns List</h2>
+            </header>
+            <div class="dictionary-grid" id="dictionaryView">
+                <div class="empty-state">No dynamic shortcuts indexed. Run the Nelvax compression matrix to populate indices.</div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="modal-overlay" id="errorModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <span class="modal-error-icon">✕</span>
+                <h3>Nelvax Engine Exception</h3>
+            </div>
+            <div class="modal-body">
+                <p id="modalErrorMessage">This file layout or structure cannot be compressed securely.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-close-btn" onclick="closeModal()">Dismiss Alert</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="auth.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
